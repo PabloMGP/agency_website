@@ -8,6 +8,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
@@ -36,10 +37,20 @@ p {
     padding: 10px 30px;
     margin: 20px 0;
     cursor: pointer;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    background-color: #1872ef;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
 }
 
 .btn:hover {
+    transition: 0.4s;
     transform: scale(1.1);
+    background-color: #07378a;
 }
 
 /* Home - Main Contents */
@@ -54,9 +65,46 @@ section {
 }
 
 section.home {
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1200px;
+    max-height: 800px;
+}
+
+.home-text {
+    margin: 20px 80px;
+}
+
+.home-text h1 {
+    animation: fadeIn 15s forwards;
+    color: var(--primaryColor);
+    font-weight: bold;
+}
+
+.home-text p {
+    animation: fadeIn 17s forwards;
+    color: white;
+}
+
+.home-text a {
+    animation: fadeIn 19s forwards;
+    color: white;
+}
+
+.logo-home {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: 2rem;
+    font-weight: 700;
+    animation: fadeIn 7s forwards;
+    z-index: 1000;
+    color: white;
 }
 
 .logo {
@@ -65,19 +113,20 @@ section.home {
     left: 100px;
     font-size: 2rem;
     font-weight: 700;
-    z-index: 10;
+    animation: fadeIn 7s forwards;
+    color: black;
 }
 
-.homeintro-img {
+.homeintro-video {
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 85%;
+    background-size: cover;
+    background-blend-mode: overlay;
 }
 
 .home-container {
     position: relative;
-    z-index: 10;
     max-width: 600px;
 }
 
@@ -250,6 +299,138 @@ section .services {
     padding: 10px;
 }
 
+/* Contact */
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 700px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+    background-color: rgb(240, 239, 239);
+    border: 1px rgb(180, 179, 179) solid;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    color: rgb(19, 18, 27);
+}
+
+#name,
+#last-name {
+    display: flex;
+    margin: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#email,
+#subject {
+    display: flex;
+    margin: 10px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.text-area {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.submit-btn {
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 70px;
+    height: 50px;
+    background-color: rgba(39, 115, 202, 0.918);
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: white;
+}
+
+.submit-btn:hover {
+    transition: 0.4s;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 70px;
+    height: 50px;
+    background-color: rgb(24, 79, 143);
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    flex-direction: column;
+    bottom: 344px;
+    right: -500px;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(241, 240, 240, 0.308);
+    box-shadow: 4px 4px 4px var(--primaryColor);
+}
+
+input,
+textarea {
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgb(67, 171, 240);
+    outline: none;
+}
+
+
+.contact-details img {
+    width: 25px;
+    height: 25px;
+}
+
+.contact-details h3 {
+    color: #1a2070;
+    font-weight: bold;
+}
+
+.contact-details a {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact-details p {
+    margin-top: 1px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+.mainpage-footer {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 1000;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+footer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    bottom: 10px;
+
+}
+
+
 /* Keyframes */
 @keyframes border-animation {
     0% {
@@ -290,6 +471,16 @@ section .services {
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
 
 /* Small screen responsiveness */
 @media screen and (max-width: 1060px) {
