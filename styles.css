@@ -21,6 +21,11 @@ body {
 }
 
 h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h2 {
     font-size: 2rem;
     font-weight: 500;
 }
@@ -62,6 +67,10 @@ section {
     justify-content: center;
     padding: 20px;
     margin-top: 20px;
+}
+
+section>p {
+    margin: 20px 350px;
 }
 
 section.home {
@@ -133,6 +142,7 @@ section.home {
 
 /* Toggle & Nav Bar */
 .toggle {
+    transition: 0.3s;
     position: fixed;
     top: 0;
     right: 0;
@@ -142,13 +152,15 @@ section.home {
     background-size: 60px;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: var(--primaryColor);
+    background-color: rgb(194, 169, 28);
+    filter: invert(1);
     background-image: url(https://res.cloudinary.com/dsitzow1q/image/upload/v1681407489/portfolio_website/menu_sokazc.webp);
     cursor: pointer;
     border-radius: 8px;
 }
 
 .toggle.active {
+    transition: 0.3s;
     background-image: url(https://res.cloudinary.com/dsitzow1q/image/upload/v1681407741/portfolio_website/close_wbfdzx.webp);
     position: fixed;
     top: 0;
@@ -231,6 +243,7 @@ section .services {
     grid-template-columns: repeat(3, 1fr);
     gap: 100px;
     text-align: center;
+    margin-top: 130px;
 }
 
 .card img {
@@ -427,7 +440,7 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     color: black;
-    bottom: 10px;
+    bottom: 0;
 
 }
 
@@ -507,6 +520,13 @@ footer {
         flex-wrap: wrap;
         height: 60vh;
     }
+    footer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black;
+        bottom: -400px;
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -515,9 +535,11 @@ footer {
     }
 
     section {
-        margin-top: 50px;
+        margin-top: 120px;
     }
-
+    section>p {
+        margin: 20px auto;
+    }
     .logo {
         font-size: 1.4rem;
     }
@@ -527,6 +549,7 @@ footer {
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
         text-align: center;
+        margin-top: 0;
     }
 
     .card img {
@@ -536,7 +559,6 @@ footer {
 
     .services .card {
         padding: 0;
-        margin: 0;
         box-shadow: none;
     }
 
@@ -544,41 +566,119 @@ footer {
         display: flex;
         flex-wrap: wrap;
         height: 70vh;
-
+    }
+    footer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black;
+        bottom: -1500px;
+    }
+    .contact-details {
+        display: flex;
+        position:static;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .contact-form {
+        display: flex;
+        margin: 20px 0 0 0;
+        justify-content: center;
+    
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 615px) {
     * {
         overflow: visible;
     }
 
     section {
-        margin-top: 100px;
+        margin-top: 230px;
     }
-
+    section>p {
+        margin: 20px auto;
+    }
     .case-studies {
         display: flex;
         flex-wrap: wrap;
         height: 85vh;
+    }
 
+    footer {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black;
+        bottom: -1450px;
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 497px) {
     * {
         overflow: visible;
     }
 
     section {
-        margin-top: 200px;
+        margin-top: 240px;
     }
-
+    section>p {
+        margin: 20px auto;
+    }
     .case-studies {
         display: flex;
         flex-wrap: wrap;
         height: 100vh;
+    }
+    footer {
+        text-align: center;
+        width: 100%;
+        color: black;
+        bottom: -1500px;
+    }
+}
 
+@media screen and (max-width: 376px) {
+    * {
+        overflow: visible;
+    }
+
+    section {
+        margin-top: 400px;
+    }
+    section>p {
+        margin: 20px auto;
+    }
+    .case-studies {
+        display: flex;
+        flex-wrap: wrap;
+        height: 125vh;
+    }
+
+    .card {
+        margin: 20px;
+    }
+    footer {
+        text-align: center;
+        width: 100%;
+        color: black;
+        bottom: -1800px;
+    }
+    .contact-details {
+        display: flex;
+        position:static;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .contact-form {
+        display: flex;
+        margin: 20px 0 0 0;
+        justify-content: center;
+    
     }
 }
 
@@ -586,14 +686,50 @@ footer {
     * {
         overflow: visible;
     }
-
     section {
-        margin-top: 350px;
+        margin-top: 400px;
     }
-
+    section>p {
+        margin: 20px auto;
+    }
     .case-studies {
         display: flex;
         flex-wrap: wrap;
         height: 125vh;
     }
+    footer {
+        text-align: center;
+        width: 100%;
+        color: black;
+        bottom: -1600px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    * {
+        overflow: visible;
+    }
+
+    section {
+        margin-top: 500px;
+        justify-content: center;
+    }
+    section>p {
+        margin: 20px auto;
+    }
+    .case-studies {
+        display: flex;
+        flex-wrap: wrap;
+        height: 125vh;
+        max-width: 95%;
+        max-height: 95%;
+    }
+ 
+    footer {
+        text-align: center;
+        width: 100%;
+        color: black;
+        bottom: -2100px;
+    }
+    
 }
